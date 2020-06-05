@@ -1,0 +1,142 @@
+@import 'src/app/app.component'
+@media (max-width: 1439px) and (min-width: 1140px)
+.page-main .about-section .fp-tableCell
+  vertical-align: middle
+
+.fp-tableCell
+  display: table-cell
+  vertical-align: middle
+  width: 100%
+  height: 100%
+
+@media (max-width: 1439px) and (min-width: 1140px)
+.page-main .about-section .content-wrapper
+  padding-top: 66px
+
+.content-wrapper
+  margin: 0 auto
+  width: 100%
+  max-width: 1140px
+  box-sizing: border-box
+
+.section-title
+  margin-bottom: 36px
+
+.section-title.paddinged
+  padding-left: 20px
+
+.section-title
+  position: relative
+  color: #333
+  font: 500 30px/1.2 'Roboto',sans-serif
+
+.about-wrapper
+  display: flex
+  align-items: flex-start
+
+.section-title.paddinged:before
+  right: calc(100% + 8px)
+
+.section-title.big:before, .section-title:before
+  content: ''
+  position: absolute
+  width: 140px
+  height: 2px
+  right: calc(100% + 28px)
+  top: 17px
+  background-color: $main-color
+
+.main-section-info
+  padding-top: 0
+
+.main-section-info
+  flex-shrink: 0
+  position: relative
+  padding: 105px 109px 0 20px
+  width: 490px
+  box-sizing: border-box
+@media (max-width: 1439px) and (min-width: 1140px)
+.page-main .about-section .about-container
+  margin-top: -106px
+
+.page-main .about-section .about-container
+  flex-shrink: 0
+  width: 653px
+
+.about-video
+  position: relative
+  display: flex
+  text-decoration: none
+  justify-content: center
+  align-items: center
+  width: 100%
+  height: 345px
+  transition: opacity .3s
+  -webkit-backface-visibility: hidden
+  backface-visibility: hidden
+
+a
+  background-color: transparent
+  -text-decoration-skip: objects
+  color: $main-color
+  text-decoration: underline
+
+.about-video img
+  max-width: 100%
+  height: auto
+
+img
+  border-style: none
+
+
+.about-video:after
+  width: 65px
+  height: 65px
+  background: url(/local/css/../images/sprite.svg?6bbfd266) -2px -642px no-repeat
+  content: ' '
+  position: absolute
+  display: block
+  top: 50%
+  left: 50%
+  transform: translate(-50%,-50%)
+
+.about-summary
+  display: flex
+  align-items: center
+  flex-wrap: wrap
+  position: relative
+  left: 0
+  margin-top: -51px
+
+.summary-item
+  flex-basis: 50%
+  flex-shrink: 0
+  flex-grow: 0
+  margin-bottom: 29px
+.item-inner
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  padding-left: 40px
+.item-count
+  font-size: 60px
+
+.item-count
+  margin-bottom: 2px
+  color: $main-color
+  font: 900 120px/1 'Roboto',sans-serif
+
+.item-text
+  max-width: 185px
+  color: #333
+  font: 500 18px/1.22 'Roboto',sans-serif
+.about-map
+  width: 1178px
+  height: 673px
+  bottom: 0
+  position: absolute
+  left: 50%
+  background: url(http://scadtech.ru/local/images/main/about-map.png) center center no-repeat
+  background-size: cover
+  transform: translate(-50%,0)
+  z-index: -1

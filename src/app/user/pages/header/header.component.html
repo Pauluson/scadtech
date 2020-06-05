@@ -1,0 +1,96 @@
+<div class="header fixed" #fixed>
+  <div class="content-wrapper">
+    <div class="logo-wrapper">
+      <a href="/" class="header-logo">
+        <img src="{{profileService.profile?.image}}?preset=150" alt="logo">
+      </a>
+    </div>
+    <div class="menu-wrapper">
+      <ul class="header-menu">
+        <li>
+          <a routerLink="/about/" routerLinkActive="active">О компании</a>
+          <ul class="list">
+            <li>
+              <a routerLink="/about/news/">Новости</a>
+            </li>
+           <!-- <li>
+              <a routerLink="/about/partners-and-certifications/">Партнеры и сертификаты</a>
+            </li>
+            <li>
+              <a routerLink="/about/our-leadership/">Наше руководство</a>
+            </li>-->
+          </ul>
+        </li>
+        <li>
+          <a routerLink="/production/" routerLinkActive="active"
+            >Продукция</a>
+         <!-- <ul class="list">
+            <li>
+              <a routerLink="/production/produktsiya-/">Продукция</a>
+            </li>
+            <li>
+              <a routerLink="/production/procurement/">Закупки</a>
+            </li>
+          </ul>-->
+        </li>
+        <li>
+          <a routerLink="/services/" routerLinkActive="active">Услуги</a>
+        </li>
+        <li>
+          <a routerLink="/contacts/" routerLinkActive="active">Контакты</a>
+        </li>
+      </ul>
+    </div>
+    <div class="header-contacts">
+      <a routerLink="tel:{{phone}}" class="header-phone js-phone-header">{{phone}}</a>
+      <a routerLink="mailto:{{email}}" class="header-mail">{{email}}</a>
+    </div>
+  </div>
+</div>
+<header class="header" #header>
+  <div class="content-wrapper">
+    <div class="logo-wrapper" routerLink="/">
+      <img src="{{profileService.profile?.image}}?preset=150" alt="logo">
+    </div>
+    <div class="menu-wrapper">
+      <div class="menu-title">
+        {{tagline}}
+      </div>
+      <nav role="navigation">
+        <ul class="header-menu">
+          <li>
+            <a routerLink="/about/" routerLinkActive="active">О компании</a>
+            <ul class="list">
+              <li>
+                <a routerLink="/about/news/">Новости</a>
+              </li>
+             <!-- <li>
+                <a routerLink="/about/partners-and-certifications/">Партнеры и сертификаты</a>
+              </li>
+              <li>
+                <a routerLink="/about/our-leadership/">Наше руководство</a>
+              </li>-->
+            </ul>
+          </li>
+          <li>
+            <a routerLink="/production/" routerLinkActive="active">Продукция</a>
+           <!-- <ul class="list">
+              <li><a routerLink="/production/produktsiya-/">Продукция</a></li>
+              <li><a routerLink="/production/procurement/">Закупки</a></li>
+            </ul>-->
+          </li>
+          <li>
+            <a routerLink="/services/" routerLinkActive="active">Услуги</a>
+          </li>
+          <li>
+            <a routerLink="/contacts/" routerLinkActive="active">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="header-contacts">
+      <a routerLink="tel:{{phone}}" class="header-phone js-phone-header">{{phone}}</a>
+      <a routerLink="mailto:{{email}}" class="header-mail">{{email}}</a>
+    </div>
+  </div>
+</header>

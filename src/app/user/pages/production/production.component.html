@@ -1,0 +1,11 @@
+<app-block>
+  <app-headline [title]="about?.title"></app-headline>
+  <div class="wysiwyg js-content">
+    <div class="block-content">
+      <div class="html" [innerHTML]="about?.content | safeHtml"></div>
+    </div>
+  </div>
+</app-block>
+
+
+

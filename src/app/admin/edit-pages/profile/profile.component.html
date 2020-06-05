@@ -1,0 +1,65 @@
+<div>
+  <div class="inline">
+    <app-headline [title]="'Стиль сайта'"></app-headline>
+    <button (click)="save()">Сохранить</button>
+  </div>
+  <form [formGroup]="profileForm">
+    <div class="color">
+      <h3>Изменить цвет текста: </h3>
+      <input class="input-color" [style.background]="f.color.value" [colorPicker]="f.color.value" formControlName="color"
+             (colorPickerChange)="changeColor($event)"/>
+    </div>
+    <div class="logo">
+
+      <div class="image-control-wrapper">
+        <h3>Изменить логотип: </h3>
+        
+        <div class="image-preview-block" *ngIf="!imagePreview && f.image.value">
+          <img class="image-preview" src="{{ f.image.value }}" alt="image">
+        </div>
+        <label for="uploadImage">Загрузить изображение</label>
+        <ng-template [ngIf]="imagePreview">
+
+          <div class="image-preview-block">
+            <img class="image-preview" src="{{ imagePreview }}" alt="image"/>
+          </div>
+        </ng-template>
+        <input id="uploadImage" name="uploadImage" class="uploadImage" type="file" accept=".png, .jpg, .jpeg, .svg"
+               (change)="changeValue($event)">
+      </div>
+    </div>
+  </form>
+  <div class="inline">
+    <app-headline [title]="'Информация в шапке сайта'"></app-headline>
+    <button (click)="saveInf()">Сохранить</button>
+  </div>
+  <form [formGroup]="informationForm">
+    <div class="user-group">
+      <h3>Номер телефона:</h3>
+      <input type="phone" formControlName="phone" />
+    </div>
+    <div class="user-group">
+      <h3>Электронная почта:</h3>
+      <input type="email" formControlName="email" />
+    </div>
+    <div class="user-group">
+      <h3>Слоган:</h3>
+      <input type="tagline" formControlName="tagline" />
+    </div>
+  </form>
+  <div class="inline">
+    <app-headline [title]="'Смена пароля'"></app-headline>
+    <button (click)="savePassword()">Сохранить</button>
+  </div>
+  <form [formGroup]="userForm">
+    <div class="user-group">
+      <h3>Старый пароль:</h3>
+      <input type="password" formControlName="old" />
+    </div>
+
+    <div class="user-group">
+      <h3>Новый пароль:</h3>
+      <input type="password" formControlName="new" />
+    </div>
+  </form>
+</div>

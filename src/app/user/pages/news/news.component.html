@@ -1,0 +1,20 @@
+<app-block>
+    <app-headline [title]="headline"></app-headline>
+
+    <div class="block-content js-block-content">
+      <div>
+        <div class="grid-row">
+          <div *ngFor="let event of events" class="event">
+            <app-event id="contact" routerLink='/about/news/{{event._id}}/'
+                       [event]="event"></app-event>
+          </div>
+        </div>
+
+        <div class="navigation">
+          <ngb-pagination (pageChange)="changePage($event)" [collectionSize]="countEvents" [pageSize]="pageSize"
+                          [(page)]="page"
+                          [boundaryLinks]="false"></ngb-pagination>
+        </div>
+      </div>
+    </div>
+</app-block>

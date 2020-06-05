@@ -1,0 +1,16 @@
+  <div class="partner-item">
+    <div class="image">
+      <img src='{{partner.image}}?preset=150' alt='{{partner.name}}'>
+    </div>
+
+    <div class="caption">{{partner.name}}</div>
+
+    <div class="description">{{partner.description}}</div>
+    <a *ngIf="partner.file" href="{{partner.file}}" target="_blank" download="" class="certificates js-link js-certificate-gallery">
+      <span>Сертификат партнера</span>
+    </a>
+  </div>
+
+
+
+

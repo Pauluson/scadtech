@@ -1,0 +1,64 @@
+@import 'src/app/app.component'
+.col
+  box-sizing: border-box
+  min-height: 1px
+  padding-left: 15px
+  padding-right: 15px
+  flex-shrink: 0
+  flex-grow: 0
+  cursor: pointer
+
+  .icon
+    display: flex
+    justify-content: center
+    align-items: center
+    font-size: 70px
+    width: 200px
+    height: 200px
+    padding-top: 3px
+    padding-left: 3px
+    opacity: 0
+
+.col:hover
+  .title
+    color: $main-color
+  .icon
+    color: white
+    background: rgba(black, 0.5)
+    opacity: 1
+
+a
+  background-color: transparent
+  color: $main-color
+  text-decoration: underline
+.cover
+  display: table-footer-group
+  width: 100%
+  height: 0
+  transition: all .3s ease
+  position: relative
+  padding-top: 100%
+  margin-bottom: 10px
+  background-repeat: no-repeat
+  background-size: cover
+
+p
+  display: block
+.date
+  margin-bottom: 4px
+  font-size: 14px
+  color: #999
+.title
+  margin-bottom: 4px
+  font-size: 18px
+  font-weight: 900
+  color: #333
+
+.close
+  color: $main-color
+  cursor: pointer
+
+.image
+  font-size: 30px
+  width: 200px
+  height: 60px

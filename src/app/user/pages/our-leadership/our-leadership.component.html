@@ -1,0 +1,39 @@
+<app-block>
+    <app-headline [title]="headline"></app-headline>
+    <div class="block-content wysiwyg">
+      <div class="grid-row">
+        <div class="col">
+          <div>
+            <ngb-carousel #carousel [showNavigationArrows]="true" [showNavigationIndicators]=false>
+              <ng-template ngbSlide *ngFor="let leadership of ourLeadership; let i=index;">
+                <div class="carousel__">
+                  <div class="image">
+                    <img [src]='leadership.image' alt="{{leadership.name}}">
+                  </div>
+
+                  <div class="info">
+                    <div class="info-content">
+                      <div class="name">{{leadership.name}}</div>
+                      <div class="post">{{leadership.position}}<br></div>
+                      <div class="controls">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="image unsharp">
+                    <img *ngIf="ourLeadership.length > i+1" [src]="ourLeadership[i+1].image + '?preset=900'"
+                         alt="{{ourLeadership[i+1].name}}">
+                    <img *ngIf="ourLeadership.length === i+1" [src]="ourLeadership[0].image + '?preset=900'"
+                         alt="{{ourLeadership[0].name}}">
+                  </div>
+                </div>
+
+              </ng-template>
+            </ngb-carousel>
+          </div>
+        </div>
+      </div>
+    </div>
+</app-block>
+
+
+

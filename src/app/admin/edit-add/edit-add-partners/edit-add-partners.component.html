@@ -1,0 +1,45 @@
+<div  >
+  <app-headline *ngIf="state === true" [title]="'Добавление нового партнера и сертификата'"></app-headline>
+  <app-headline *ngIf="state === false" [title]="'Редактирование партнера и сертификата'"></app-headline>
+
+  <form [formGroup]="partner">
+    <div class="form-group">
+      <h2>Фотография</h2>
+      <div class="image-control-wrapper">
+        <label for="uploadImage">Загрузить изображение</label>
+        <div class="image-preview-block" *ngIf="!imagePreview && f.image.value">
+          <img class="image-preview" src="{{ f.image.value }}" alt="image">
+        </div>
+        <ng-template [ngIf]="imagePreview">
+          <div class="image-preview-block">
+            <img class="image-preview" src="{{ imagePreview }}" alt="image" />
+          </div>
+        </ng-template>
+        <input id="uploadImage" name="uploadImage" class="uploadImage" type="file" accept=".png, .jpg, .jpeg" (change)="changeValue($event)">
+      </div>
+      <div *ngIf="!imageURL && !f.image.value " [ngStyle]="{'color': 'red'}"> Фотография обязательна </div>
+    </div>
+    <div class="form-group">
+      <h2>Название</h2>
+      <input type="text" formControlName="name">
+      <div *ngIf="partner.get('name').invalid" [ngStyle]="{'color': 'red'}"> Название обязательно </div>
+    </div>
+    <div class="form-group">
+      <h2>Описание</h2>
+      <input type="text" formControlName="description">
+      <div *ngIf="partner.get('description').invalid" [ngStyle]="{'color': 'red'}"> Описание обязательно </div>
+    </div>
+    <div class="form-group">
+      <div class="file-block">
+        <h2>Сертификат</h2>
+        <label for="uploadFile">Загрузить файл</label>
+        <span *ngIf="!fileURL && f.file.value">{{f.file.value}}</span>
+        <span *ngIf="fileURL">{{fileURL.name}}</span>
+        <input id="uploadFile" formControlName="file" name="uploadFile" class="uploadFile" type="file" accept=".doc, .docx, .pdf" (change)="changeFile($event)">
+      </div>
+    </div>
+  </form>
+
+  <button *ngIf="state === true" (click)="addPartner()">Добавить</button>
+  <button *ngIf="state === false" (click)="updatePartner()">Сохранить</button>
+</div>

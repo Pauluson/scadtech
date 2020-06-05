@@ -1,0 +1,48 @@
+<div  >
+  <app-headline *ngIf="state === true" [title]="'Добавление нового документа'"></app-headline>
+  <app-headline *ngIf="state === false" [title]="'Редактирование документа'"></app-headline>
+
+  <form [formGroup]="document">
+    <div class="form-group">
+      <h2>Название</h2>
+      <input type="text" formControlName="title">
+      <div *ngIf="document.get('title').invalid" [ngStyle]="{'color': 'red'}"> Название обязательно </div>
+    </div>
+    <div class="form-group">
+      <h2>Номер</h2>
+      <input type="text" formControlName="number">
+      <div *ngIf="document.get('number').invalid" [ngStyle]="{'color': 'red'}"> Номер обязателен </div>
+
+    </div>
+    <div class="form-group">
+      <h2>Дата</h2>
+      <input type="text" formControlName="date">
+      <div *ngIf="document.get('date').invalid" [ngStyle]="{'color': 'red'}"> Дата обязательна </div>
+    </div>
+    <div class="form-group">
+      <h2>Выдан</h2>
+      <input type="text" formControlName="descriptionIssuedBy">
+    </div>
+    <div class="form-group">
+      <h2>Виды работ</h2>
+      <input type="text" formControlName="descriptionTypesOfJobs">
+    </div>
+    <div class="form-group">
+      <div class="file-block">
+        <h2>Файл</h2>
+        <label for="uploadFile">Загрузить файл</label>
+        <span *ngIf="!fileURL && f.link.value">{{f.link.value}}</span>
+        <span *ngIf="fileURL">{{fileURL.name}}</span>
+        <input id="uploadFile" formControlName="link" name="uploadFile" class="uploadFile" type="file" accept=".doc, .docx, .pdf" (change)="changeFile($event)">
+        <div *ngIf="!fileURL && !f.link.value" [ngStyle]="{'color': 'red'}"> Файл обязателен </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <h2>Срок действия</h2>
+      <input type="text" formControlName="validity">
+    </div>
+  </form>
+
+  <button *ngIf="state === true" (click)="addDocument()">Добавить</button>
+  <button *ngIf="state === false" (click)="updateDocument()">Сохранить</button>
+</div>

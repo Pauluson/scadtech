@@ -1,0 +1,19 @@
+<div class="block-content">
+  <div class="document">
+    <div>
+      <i class="icon-file-by-ext" [attr.data-ext]="document?.fileType.split('/')[1]"></i>
+    </div>
+    <div>
+      <a href="{{document.link}}" class="title" target="_blank" download="">{{document.title}}</a>
+      <div class="title"> {{document.number}}</div>
+      <div class="date">{{document.date}}</div>
+      <div *ngIf="state.descriptionIssuedBy" class="description">
+        Выдан: {{document.descriptionIssuedBy}}</div>
+      <div *ngIf="state.descriptionTypesOfJobs" class="description">Виды
+        работ: {{document.descriptionTypesOfJobs}}</div>
+      <div *ngIf="state.validity" class="description">Срок действия: до {{document.validity}}</div>
+    </div>
+
+  </div>
+</div>
+

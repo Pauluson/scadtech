@@ -1,0 +1,50 @@
+<div  >
+  <app-headline *ngIf="state === true" [title]="'Добавление нового контакта'"></app-headline>
+  <app-headline *ngIf="state === false" [title]="'Редактирование контакта'"></app-headline>
+
+  <form [formGroup]="contact">
+    <div class="form-group">
+      <h2>Название</h2>
+      <input type="text" formControlName="name">
+      <div *ngIf="contact.get('name').invalid" [ngStyle]="{'color': 'red'}"> Название обязательно </div>
+    </div>
+    <div class="form-group">
+      <div class="image-block">
+        <h2>Фотография</h2>
+        <div class="image-control-wrapper">
+          <label for="uploadImage">Загрузить изображение</label>
+          <div class="image-preview-block" *ngIf="!imagePreview && f.image.value">
+            <img class="image-preview" src="{{ f.image.value }}" alt="image">
+          </div>
+          <ng-template [ngIf]="imagePreview">
+
+            <div class="image-preview-block">
+              <img class="image-preview" src="{{ imagePreview }}" alt="image" />
+            </div>
+          </ng-template>
+          <input id="uploadImage" name="uploadImage" class="uploadImage" type="file" accept=".png, .jpg, .jpeg" (change)="changeValue($event)">
+        </div>
+        <div *ngIf="!imageURL && !f.image.value" [ngStyle]="{'color': 'red'}"> Изображение обязательно </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <h2>Телефон</h2>
+      <input type="text" formControlName="number">
+    </div>
+    <div class="form-group">
+      <h2>Адрес</h2>
+      <input type="text" formControlName="address">
+    </div>
+    <div class="form-group">
+      <h2>Факс</h2>
+      <input type="text" formControlName="fax">
+    </div>
+    <div class="form-group">
+      <h2>Электронная почта</h2>
+      <input type="text" formControlName="email">
+    </div>
+  </form>
+
+  <button *ngIf="state === true" (click)="addContact()">Добавить</button>
+  <button *ngIf="state === false" (click)="updateContact()">Сохранить</button>
+</div>

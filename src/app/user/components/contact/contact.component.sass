@@ -1,0 +1,62 @@
+@import 'src/app/app.component'
+.image
+  position: relative
+  height: 262px
+  background: 0 0 no-repeat
+  background-size: cover
+  -webkit-backface-visibility: hidden
+  backface-visibility: hidden
+  cursor: pointer
+
+.name
+  position: absolute
+  font-size: 24px
+  font-weight: 700
+  color: #fff
+  bottom: 25px
+  left: 25px
+  max-width: calc(100% - 50px)
+.selected
+  grid-row-end: span 2
+  grid-column-end: span 2
+.detail-info
+  height: 292px
+  overflow: hidden
+  background: #fff
+  box-shadow: 0 0 6px 6px rgba(154, 154, 154, 0.6)
+
+.contact
+  position: relative
+  font-size: 20px
+  color: #666
+  padding: 10px 0 10px 40px
+
+.contacts-list .contact:before
+  content: ' '
+  position: absolute
+  display: block
+  left: 0
+  top: 12px
+.contact a
+  color: #666
+  text-decoration: none
+
+.inner:before
+  content: ' '
+  position: absolute
+  left: 0
+  top: 0
+  height: 2px
+  width: 57px
+  background: $main-color
+.inner
+  position: relative
+  margin: 40px 30px
+  padding-top: 25px
+  max-height: 180px
+  overflow-y: auto
+a, .contact .location
+  display: flex
+  align-items: center
+  i
+    margin-right: 10px

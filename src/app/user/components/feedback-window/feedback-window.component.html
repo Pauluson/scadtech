@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="popup-title">
+    Обратная связь
+  </div>
+  <form [formGroup]="feedbackForm">
+    <div class="form-col">
+      <div class="input fluid">
+        <label class="label" for="form_text_1">Фамилия </label>
+        <input type="text" id="form_text_1" value="" formControlName="surname">
+      </div>
+      <div class="input fluid">
+        <label class="label" for="form_text_2">Имя </label>
+        <input type="text" id="form_text_2" formControlName="name" value="">
+      </div>
+      <div class="input fluid">
+        <label class="label" for="form_text_3">Отчество </label>
+        <input type="text" id="form_text_3" formControlName="middleName" value="">
+      </div>
+      <div class="input fluid">
+        <label class="label" for="form_email_4">E-mail </label>
+        <input type="text" id="form_email_4" formControlName="email" value="">
+      </div>
+    </div>
+    <div class="form-col">
+      <div class="input fluid">
+        <label class="label" for="form_text_5">Телефон </label>
+        <input type="text" id="form_text_5" formControlName="phone" value="">
+      </div>
+      <div class="input fluid textarea">
+        <label class="label" for="form_textarea_6">Текст вопроса </label>
+        <textarea id="form_textarea_6" formControlName="text"></textarea>
+      </div>
+    </div>
+  </form>
+  <div class="terms-agreement">
+    <button (click)="sendFeedback()">Отправить</button>
+  </div>
+</div>
+

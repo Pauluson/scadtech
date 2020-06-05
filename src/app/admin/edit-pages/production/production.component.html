@@ -1,0 +1,66 @@
+<div  >
+  <div>
+    <div class="inline">
+      <app-headline [title]="'Продукция'"></app-headline>
+      <button (click)="saveInformation()">Сохранить</button>
+    </div>
+    <form [formGroup]="production">
+      <div class="form-group">
+        <h2>Название</h2>
+        <input type="text" formControlName="title">
+      </div>
+      <div class="form-group">
+        <h3>Контент</h3>
+        <editor type="text" formControlName="content"
+                [init]="{
+        height: 500,
+        plugins: [
+          'advlist autolink lists link image imagetools code charmap print preview anchor',
+          'searchreplace visualblocks code fullscreen',
+          'insertdatetime media table paste code help wordcount'
+        ],
+        menubar: 'file edit insert view format table help',
+        image_uploadtab: true,
+        imagetools_toolbar: 'rotateleft rotateright | flipv fliph | editimage imageoptions',
+        toolbar:
+          ' formatselect | bold italic underline forecolor backcolor | \ alignleft aligncenter alignright alignjustify | \ bullist numlist outdent indent | removeformat ',
+          paste_data_images: true
+      }"
+        >
+        </editor>
+      </div>
+    </form>
+  </div>
+
+  <div>
+    <div class="inline">
+      <app-headline [title]="'Продукция'"></app-headline>
+      <button routerLink='/admin/edit-products/add'><i class="material-icons">add</i> продукцию</button>
+    </div>
+    <div class="table">
+      <table>
+        <thead>
+        <tr>
+          <th>Название</th>
+          <th>Ссылка</th>
+          <th></th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let product of products">
+          <td>{{product.name}}</td>
+          <td>/production/{{product._id}}</td>
+          <td routerLink='/admin/edit-products/{{product._id}}'><i class="material-icons">edit</i></td>
+          <td><i class="material-icons" (click)="deleteItem(product)">close</i></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <ngb-pagination (pageChange)="changePage($event)" [collectionSize]="countProducts" [pageSize]="pageSize" [(page)]="page"
+                    [boundaryLinks]="false"></ngb-pagination>
+  </div>
+</div>
+
+

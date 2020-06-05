@@ -1,0 +1,26 @@
+<div class="contact-item">
+  <div class="image"
+       [ngStyle]="{'background-image':'url(' + contact.image + '?preset=600)'}">
+    <div class="name">{{contact.name}}</div>
+  </div>
+  <div *ngIf="selected" class="detail-info">
+    <div class="inner">
+      <div class="office">
+        <div *ngIf="contact.number.length !== 0" class="contact phone">
+          <a href="tel:{{contact.number}}"> <i class="material-icons">call</i>
+            {{contact.number}} </a>
+        </div>
+        <div *ngIf="contact.address.length !== 0" class="contact location" data-marker-id="1174"> <i class="material-icons">my_location</i> {{contact.address}}</div>
+        <div *ngIf="contact.email.length !== 0" class="contact mail">
+          <a href="mailto:{{contact.email}}"> <i class="material-icons">mail</i>
+            {{contact.email}} </a>
+        </div>
+        <div *ngIf="contact.fax.length !== 0" class="fax">
+          <a class="contact fax" href="tel:{{contact.fax}}"> <i class="material-icons">print</i>
+            {{contact.fax}} </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<div class="inline">
+  <app-headline [title]="'Услуги'"></app-headline>
+  <button routerLink='/admin/edit-service/add'><i class="material-icons">add</i>документ</button>
+</div>
+<div  >
+  <div class="table">
+    <table>
+      <thead>
+        <tr>
+          <th>Название</th>
+          <th>Номер</th>
+          <th>Дата</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let doc of documents">
+          <td>{{doc.title}}</td>
+          <td>{{doc.number}}</td>
+          <td>{{doc.date}}</td>
+          <td routerLink='/admin/edit-document/{{doc._id}}'><i class="material-icons">edit</i></td>
+          <td><i class="material-icons" (click)="deleteDocument(doc)">close</i></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="navigation">
+    <ngb-pagination (pageChange)="changePage($event)" [collectionSize]="countDocuments" [pageSize]="pageSize" [(page)]="page"
+                    [boundaryLinks]="false"></ngb-pagination>
+  </div>
+</div>
+

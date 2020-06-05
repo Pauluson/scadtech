@@ -1,0 +1,8 @@
+<div class="about-block about-as">
+  <div class="content-wrapper">
+    <app-headline [title]="aboutCompany?.title"></app-headline>
+    <div class="block-content">
+      <div [innerHTML]="aboutCompany?.content | safeHtml"></div>
+    </div>
+  </div>
+</div>

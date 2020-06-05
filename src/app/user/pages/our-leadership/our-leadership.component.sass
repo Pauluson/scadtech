@@ -1,0 +1,74 @@
+@import 'src/app/app.component'
+
+.info
+  position: absolute
+  width: 420px
+  right: 0
+  bottom: 70px
+  padding-left: 40px
+  padding-top: 35px
+  padding-bottom: 80px
+  color: #fefefe
+  background-color: $main-color
+  z-index: 200
+.info-content
+  height: 100%
+
+.name
+  font-size: 18px
+
+.post
+  font-size: 14px
+  overflow: hidden
+
+.col, .grid-row>.col
+  box-sizing: border-box
+  position: relative
+  min-height: 1px
+  padding-left: 15px
+  padding-right: 15px
+  flex-shrink: 0
+  flex-grow: 0
+  max-width: 100%
+
+.grid-row
+  display: flex
+  flex-wrap: wrap
+  box-sizing: border-box
+
+.block-content
+  margin-top: -3px
+  padding-left: 20px
+  margin-bottom: 12px
+  width: 100%
+
+.carousel-control-next-icon, .carousel-control-prev-icon
+  height: 100px
+  width: 100px
+  outline: black
+  background-size: 100%, 100%
+  border-radius: 50%
+  border: 1px solid black
+  background-image: none
+
+
+.carousel-control-next-icon:after
+  content: '>'
+  font-size: 55px
+  color: $main-color
+
+
+.carousel-control-prev-icon:after
+  content: '<'
+  font-size: 55px
+  color: $main-color
+.image_two
+  margin-left: auto
+.carousel__
+  display: flex
+  .image
+    margin-right: 60px
+  .unsharp
+    -webkit-filter: blur(2px)
+img
+  height: 600px

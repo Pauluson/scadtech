@@ -1,0 +1,57 @@
+@import 'src/app/app.component'
+
+.block-content
+  padding-bottom: 100px
+.grid-row
+  display: flex
+  flex-wrap: wrap
+  box-sizing: border-box
+  margin-left: -15px
+  margin-right: -15px
+.event
+  width: 25%
+.navigation
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 32px
+  margin: 20px auto
+
+
+ngb-pagination::ng-deep
+  .pagination
+    background: transparent
+  .page-item.active .page-link
+    color: #fff
+    background-color: $main-color
+    border: none
+  .page-link
+    color: $main-color
+    background-color: transparent
+    border: none
+
+  .page-link span:before
+    content: ''
+    position: absolute
+    width: 27px
+    height: 4px
+    background: url(/assets/sprite.svg) -308px -605px no-repeat
+    left: 50%
+    top: 50%
+    transform: translateX(-50%) translateY(-50%)
+
+  .disabled span:before
+    content: ''
+    position: absolute
+    width: 27px
+    height: 4px
+    background: url(/assets/sprite.svg) -277px -605px no-repeat
+    left: 50%
+    top: 50%
+    transform: translateX(-50%) translateY(-50%)
+  span
+    color: transparent
+  [aria-label = 'Previous']
+    transform: rotateY(180deg)
+  .page-item
+    margin: 0 5px

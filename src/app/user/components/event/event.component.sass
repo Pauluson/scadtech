@@ -1,0 +1,51 @@
+@import 'src/app/app.component'
+.col
+  box-sizing: border-box
+  position: relative
+  min-height: 1px
+  padding-left: 15px
+  padding-right: 15px
+  flex-shrink: 0
+  flex-grow: 0
+  max-width: 100%
+  cursor: pointer
+.col:hover
+  .title
+    color: $main-color
+.news-item
+  transition: all .3s ease
+  display: block
+  margin-bottom: 63px
+  text-decoration: none
+
+a
+  background-color: transparent
+  color: $main-color
+  text-decoration: underline
+.cover
+  width: 100%
+  height: 0
+  transition: all .3s ease
+  position: relative
+  padding-top: 100%
+  margin-bottom: 10px
+  background-repeat: no-repeat
+  background-size: cover
+  overflow: hidden
+  box-shadow: inset 0 0 0 500px rgba(0,54,255,.2)
+span
+  display: block
+.date
+  margin-bottom: 4px
+  font-size: 14px
+  color: #999
+.title
+  margin-bottom: 4px
+  font-size: 18px
+  font-weight: 900
+  color: #333
+.description
+  font-size: 14px
+  color: #666
+
+

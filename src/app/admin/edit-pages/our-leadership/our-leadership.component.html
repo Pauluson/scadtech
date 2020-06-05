@@ -1,0 +1,16 @@
+<div  >
+  <div class="inline">
+    <app-headline [title]="headline"></app-headline>
+    <button routerLink='/admin/edit-our-leaderships/add'><i class="material-icons">add</i>руководителя</button>
+  </div>
+  <div class="contacts-list">
+    <div *ngFor="let item of leaderships" class="event">
+      <app-item routerLink='/admin/edit-our-leaderships/{{item._id}}'
+                [item]="item"
+                [key]="'leaderships'"></app-item>
+      <i (click)="deleteItem(item)" class="close material-icons">close</i>
+    </div>
+  </div>
+  <ngb-pagination (pageChange)="changePage($event)" [collectionSize]="countLeaderships" [pageSize]="pageSize" [(page)]="page"
+                  [boundaryLinks]="false"></ngb-pagination>
+</div>

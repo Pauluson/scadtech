@@ -1,0 +1,9 @@
+<app-block>
+    <app-headline [title]="product?.name"></app-headline>
+    <div class="wysiwyg js-content">
+      <div class="block-content">
+        <div class="html" [innerHTML]="product?.content | safeHtml"></div>
+      </div>
+    </div>
+  </app-block>
+  

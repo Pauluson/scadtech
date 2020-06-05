@@ -1,0 +1,103 @@
+<div  >
+  <div>
+    <div class="inline">
+      <app-headline [title]="'О компании'"></app-headline>
+      <button (click)="saveInformationAC()">Сохранить</button>
+    </div>
+    <form [formGroup]="aboutCompany">
+      <div class="form-group">
+        <h2>Название</h2>
+        <input type="text" formControlName="title">
+      </div>
+      <div class="form-group">
+        <h3>Контент</h3>
+        <editor type="text" formControlName="content"
+                [init]="{
+        height: 500,
+        plugins: [
+          'advlist autolink lists link image imagetools code charmap print preview anchor',
+          'searchreplace visualblocks code fullscreen',
+          'insertdatetime media table paste code help wordcount'
+        ],
+        menubar: 'file edit insert view format table help',
+        image_uploadtab: true,
+        imagetools_toolbar: 'rotateleft rotateright | flipv fliph | editimage imageoptions',
+        toolbar:
+          ' formatselect | bold italic underline forecolor backcolor | \ alignleft aligncenter alignright alignjustify | \ bullist numlist outdent indent | removeformat '
+      }"
+        >
+        </editor>
+      </div>
+    </form>
+  </div>
+<!--  <div>
+    <div class="inline">
+      <app-headline [title]="'История'"></app-headline>
+      <button class="add" routerLink="/admin/edit-about-company/history-event/add"><i class="material-icons">add</i>событие</button>
+    </div>
+
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Год</th>
+        <th>Заголовок</th>
+        <th>Описание</th>
+        <th></th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+
+
+      <tr
+        *ngFor="let row of historyEvents">
+        <td>{{row.year}}</td>
+        <td>{{row.caption}}</td>
+        <td>{{row.description}}</td>
+        <td routerLink='/admin/edit-about-company/history-event/{{row._id}}'><i class="material-icons">edit</i></td>
+        <td><i class="material-icons" (click)="deleteHistoryEvent(row)">close</i></td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="navigation">
+      <ngb-pagination (pageChange)="changePage($event)" [collectionSize]="countHistoryEvents" [pageSize]="pageSizeForHistory" [(page)]="page"
+                      [boundaryLinks]="false"></ngb-pagination>
+    </div>
+
+  </div>-->
+  <div>
+    <div class="inline">
+      <app-headline [title]="'Разработки'"></app-headline>
+      <button class="add" routerLink="/admin/edit-about-company/values/add"><i class="material-icons">add</i></button>
+    </div>
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Фотография</th>
+        <th>Название</th>
+        <th>Описание</th>
+        <th></th>
+        <th></th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr
+        *ngFor="let value of values">
+        <td><img src="{{value.image}}" class="image"/></td>
+        <td>{{value.name}}</td>
+        <td>{{value.description}}</td>
+        <td routerLink='/admin/edit-about-company/values/{{value._id}}'><i class="material-icons">edit</i></td>
+        <td><i class="material-icons" (click)="deleteValue(value)">close</i></td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="navigation">
+      <ngb-pagination (pageChange)="changePageValues($event)" [collectionSize]="countValues" [pageSize]="pageSizeForValues" [(page)]="pageValue"
+                      [boundaryLinks]="false"></ngb-pagination>
+    </div>
+
+  </div>
+</div>
+
+

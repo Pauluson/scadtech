@@ -1,0 +1,60 @@
+<app-block>
+  <app-headline [title]="headline"></app-headline>
+  <div class="block-content">
+    <div class="wysiwyg clearfix">
+      <div class="content">
+        <p style="text-align: left;">
+          <img width="342" alt="DSC_4716.jpg"
+               src="http://scadtech.ru/upload/medialibrary/1db/1db5e5a8e8ee710173b2ae871be14537.jpg"
+               height="512" title="DSC_4716.jpg" align="right">
+        </p>
+        <p>Отдел контроля и сопровождения цепей поставок Группы компаний "СКАД тех" <br> отвечает за подбор поставщиков,
+          их оценку на соответствие требованиям Группы компаний, управление данными поставщиков, а также их развитие -
+          поддержку организаций, стремящихся войти в Реестр поставщиков ГК "СКАД тех", но не соответствующих тeм или
+          иным требованиям<br>
+        </p>
+        Потребность ГК "СКАД тех" в привлечении новых поставщиков продукции и/или услуг связана с:<br>
+        <ol>
+          <li>монопольным положением одного или двух поставщиков по определенному виду продукции/услуг (стимулирование
+            конкуренции);<br>
+          </li>
+          <li>ожидаемым снижением затрат на закупку какого-либо вида продукции/услуг при переходе на договор с новым
+            поставщиком;<br>
+          </li>
+          <li>неудовлетворительным качеством исполнения условий договора тем или иным поставщиком и необходимость найти
+            ему альтернативу;<br>
+          </li>
+          <li>появлением новых видов продукции/услуг в номенклатуре ДМТО;<br>
+          </li>
+          <li>появлением на рынке инновационных решений, применение которых технически и экономически оправдано для ГК
+            "СКАД тех".&nbsp;
+          </li>
+        </ol>
+      </div>
+      <a href="http://scadtech.ru/production/procurement/podbor-i-otsenka-postavshchikov/?clear_cache=Y">Информация
+        для новых поставщиков</a><br>
+      <br>
+      <a href="http://scadtech.ru/production/procurement/podbor-i-otsenka-postavshchikov/regulyarnye-/?clear_cache=Y">Регулярные
+        закупки</a>
+      <br><br>
+      <app-popup [title]="'Обратная связь по закупкам'"></app-popup>
+      <div class="button">
+        <button (click)="open()">Обратная связь по закупкам</button>
+      </div>
+    </div>
+
+    <div class="files-list">
+      <div class="file-download" *ngFor="let file of files">
+        <app-file [file]="file"></app-file>
+      </div>
+    </div>
+
+    <div class="files-list selected">
+      <div class="file-download" *ngFor="let file of selectedFiles">
+        <app-file [file]="file"></app-file>
+      </div>
+    </div>
+  </div>
+</app-block>
+
+

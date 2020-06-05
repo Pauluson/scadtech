@@ -1,0 +1,25 @@
+<div  >
+  <app-headline *ngIf="state === true" [title]="'Добавление нового исторического события'"></app-headline>
+  <app-headline *ngIf="state === false" [title]="'Редактирование исторического события'"></app-headline>
+
+  <form [formGroup]="historyEvent">
+    <div class="form-group">
+      <h2>Год</h2>
+      <input type="text" formControlName="year">
+      <div *ngIf="historyEvent.get('year').invalid" [ngStyle]="{'color': 'red'}"> Год обязателен </div>
+    </div>
+    <div class="form-group">
+      <h2>Заголовок</h2>
+      <input type="text" formControlName="caption">
+      <div *ngIf="historyEvent.get('caption').invalid" [ngStyle]="{'color': 'red'}"> Название обязательно </div>
+    </div>
+    <div class="form-group">
+      <h2>Описание</h2>
+      <textarea class="description" type="text" formControlName="description"></textarea>
+      <div *ngIf="historyEvent.get('description').invalid" [ngStyle]="{'color': 'red'}"> Описание обязательно </div>
+    </div>
+  </form>
+
+  <button *ngIf="state === true" (click)="addHistoryEvent()">Добавить</button>
+  <button *ngIf="state === false" (click)="updateHistoryEvent()">Сохранить</button>
+</div>

@@ -1,0 +1,60 @@
+<div  >
+  <app-headline *ngIf="state === true" [title]="'Добавление новости'"></app-headline>
+  <app-headline *ngIf="state === false" [title]="'Редактирование новости'"></app-headline>
+  <form [formGroup]="addNews">
+    <div class="form-group">
+      <h2>Название</h2>
+      <input type="text" formControlName="title">
+      <div *ngIf="addNews.get('title').invalid" [ngStyle]="{'color': 'red'}"> Заголовок обязателен </div>
+    </div>
+    <div class="form-group">
+      <h2>Дата</h2>
+      <input type="text" formControlName="date">
+      <div *ngIf="addNews.get('date').invalid" [ngStyle]="{'color': 'red'}"> Дата обязательна </div>
+    </div>
+    <div class="image-block">
+      <h2>Фотография</h2>
+      <div class="image-control-wrapper">
+        <label for="uploadImage">Загрузить изображение</label>
+        <div class="image-preview-block" *ngIf="!imagePreview && f.previewImage.value">
+          <img class="image-preview" src="{{ f.previewImage.value }}" alt="image">
+        </div>
+        <ng-template [ngIf]="imagePreview">
+
+          <div class="image-preview-block">
+            <img class="image-preview" src="{{ imagePreview }}" alt="image" />
+          </div>
+        </ng-template>
+        <input id="uploadImage" name="uploadImage" class="uploadImage" type="file" accept=".png, .jpg, .jpeg" (change)="changeValue($event)">
+      </div>
+      <div *ngIf="!imageURL && !f.previewImage.value" [ngStyle]="{'color': 'red'}"> Фотография обязательно </div>
+    </div>
+    <div class="form-group">
+      <h2>Текст предпоказа</h2>
+      <input type="text" formControlName="preview">
+      <div *ngIf="addNews.get('preview').invalid" [ngStyle]="{'color': 'red'}"> Текст предпоказа обязателен </div>
+    </div>
+    <div class="form-group">
+      <h2>Содержмое новости</h2>
+      <editor type="text" formControlName="content"
+              [init]="{
+        height: 500,
+        plugins: [
+          'advlist autolink lists link image imagetools code charmap print preview anchor',
+          'searchreplace visualblocks code fullscreen',
+          'insertdatetime media table paste code help wordcount'
+        ],
+        menubar: 'file edit insert view format table help',
+        image_uploadtab: true,
+        imagetools_toolbar: 'rotateleft rotateright | flipv fliph | editimage imageoptions',
+        toolbar:
+          ' formatselect | bold italic underline forecolor backcolor | \ alignleft aligncenter alignright alignjustify | \ bullist numlist outdent indent | removeformat '
+      }"
+      >
+      </editor>
+      <div *ngIf="addNews.get('content').invalid" [ngStyle]="{'color': 'red'}"> Контент обязателен </div>
+    </div>
+  </form>
+  <button *ngIf="state === true" (click)="addEvent()">Добавить</button>
+  <button *ngIf="state === false" (click)="updateEvent()">Сохранить</button>
+</div>

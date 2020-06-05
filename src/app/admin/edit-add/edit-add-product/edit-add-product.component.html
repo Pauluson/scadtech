@@ -1,0 +1,37 @@
+<div>
+  <app-headline *ngIf="state === true" [title]="'Добавление продукции'"></app-headline>
+  <app-headline *ngIf="state === false" [title]="'Редактирование продукции'"></app-headline>
+
+  <form [formGroup]="productForm">
+
+    <div class="form-group">
+      <h2>Название</h2>
+      <input type="text" formControlName="name">
+      <div *ngIf="productForm.get('name').invalid" [ngStyle]="{'color': 'red'}"> Название обязательно </div>
+    </div>
+    <div class="form-group">
+      <h2>Контент</h2>
+      <editor type="text" formControlName="content" (change)="changeValue($event)"
+              [init]="{
+        height: 500,
+        plugins: [
+          'advlist autolink lists link image imagetools code charmap print preview anchor',
+          'searchreplace visualblocks code fullscreen',
+          'insertdatetime media table paste code help wordcount'
+        ],
+        menubar: 'file edit insert view format table help',
+        image_uploadtab: true,
+        imagetools_toolbar: 'rotateleft rotateright | flipv fliph | editimage imageoptions',
+        toolbar: 'formatselect | bold italic underline forecolor backcolor | \ alignleft aligncenter alignright alignjustify | \ bullist numlist outdent indent | removeformat ',
+        paste_data_images: true   
+      }"
+      >
+      </editor>
+      
+      <div *ngIf="productForm.get('content').invalid" [ngStyle]="{'color': 'red'}"> Контент обязателен </div>
+    </div>
+  </form>
+  <button *ngIf="state === true" (click)="addProduct()">Добавить</button>
+  <button *ngIf="state === false" (click)="updateProduct()">Сохранить</button>
+</div>
+<!--paste_data_images: true,-->

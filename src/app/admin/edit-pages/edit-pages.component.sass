@@ -1,0 +1,93 @@
+@import 'src/app/app.component'
+@import '../edit-add/common.styles'
+@import './common.styles'
+
+.page
+  min-height: 100%
+  min-height: 100vh
+  display: flex
+  flex-direction: column
+
+  .header p
+    margin: 0
+    font-size: 16px
+    color: gray
+
+  img
+    height: 50px
+  header
+    display: flex
+    justify-content: space-between
+    align-items: center
+    width: 100%
+    padding: 0 3rem
+
+  .header
+    background: white
+    min-height: 70px
+    height: 70px
+    display: flex
+    flex-direction: row
+    box-shadow: 0 0.5rem 1rem 0 rgba(44,51,73,.1)
+
+  .content
+    flex: 1 1 auto
+    overflow-y: auto
+    min-height: 0px
+    display: flex
+    flex-direction: row
+
+  .side-bar
+    width: 300px
+    overflow-y: auto
+    min-height: 0px
+
+
+  .main-bar
+    width: calc( 100% - 300px )
+    background: $imageBack
+    box-shadow: 5px 0 5px -5px rgba(44,51,73,.1)
+    flex: 1 1 auto
+    overflow-y: auto
+    min-height: 0px
+    padding: 1rem 2rem 0
+
+.menu-link
+  padding: 20px 10px 10px 10px
+  i
+    font-size: 17px
+    color: #C2CFE0
+  a
+    text-decoration: none
+    font-family: 'Poppins', sans-serif
+    font-style: normal
+    font-weight: 500
+    letter-spacing: 0.01em
+    color: #334D6E
+    font-size: 18px
+    i
+      font-size: 16px
+      margin: 0 5px 0
+      vertical-align: -3px
+.menu-link
+  a
+    margin-left: 10px
+  a:active, a:focus, i:active, i:focus
+    color: $main-color
+
+
+.header
+  i
+    display: flex
+    justify-content: center
+    align-items: center
+    font-size: 35px
+    color: $main-color
+    cursor: pointer
+
+.edit-container
+  height: 100%
+.icons
+  display: flex
+  i
+    margin: 0 10px

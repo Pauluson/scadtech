@@ -1,0 +1,86 @@
+@import 'src/app/app.component'
+
+.wysiwyg .image:not(:empty)
+  float: left
+  margin-right: 28px
+  margin-top: 20px
+.wysiwyg p, li, p
+  font: 18px/24px
+  color: #666
+.wysiwyg ol, .wysiwyg ul
+  margin: 34px 0 53px
+
+
+.wysiwyg ol
+  counter-reset: olCounter
+
+a
+  background-color: transparent
+  -text-decoration-skip: objects
+  color: $main-color
+  text-decoration: underline
+.page-procurement .btn-wrapper
+  text-align: center
+  margin: 30px 0
+
+.files-list
+  display: flex
+  flex-wrap: wrap
+  padding: 50px 0 60px
+.files-list.selected
+  border-top: 2px solid #e0e0e0
+.wysiwyg ol>li:before, .wysiwyg  ul ol>li:before .wysiwyg  ol>li:before, .wysiwyg ul ol>li:before
+  position: absolute
+  left: 0
+  top: 0
+  counter-increment: olCounter
+  content: counter(olCounter)
+  color: $main-color
+  font-weight: 700
+  margin: 0 2px 0 0
+
+.btn-wrapper
+  text-align: center
+  margin: 30px 0
+.btn, .btn.bg-red:hover
+  background-color: transparent
+  color: $main-color
+
+.btn
+  display: inline-block
+  text-align: center
+  vertical-align: middle
+  min-width: 146px
+  height: 38px
+  padding: 9px 6px
+  border: 1px solid $main-color
+  font-size: 14px
+  text-decoration: none
+  cursor: pointer
+  transition: .3s color,.3s background-color
+  -webkit-appearance: none
+  border-radius: 0
+
+
+
+
+.files-list
+  display: flex
+  flex-wrap: wrap
+  padding: 50px 0 60px
+
+.file-download:before
+  width: 32px
+  height: 33px
+  background: url(/local/css/../images/sprite.svg?6bbfd266) -81px -746px no-repeat
+  content: ''
+  display: block
+  margin-bottom: 12px
+.files-list.selected
+  border-top: 2px solid #e0e0e0
+.file-download
+  position: relative
+  width: 33.33333333%
+  padding-left: 50px
+  padding-right: 20px
+

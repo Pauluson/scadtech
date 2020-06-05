@@ -1,0 +1,35 @@
+<div class="page">
+  <div id="header" class="header">
+    <header>
+      <img
+        src="{{profileService.profile?.image}}"
+        alt="logo"
+        />
+      <p>Admin page</p>
+      <div class="icons">
+        <i class="material-icons" routerLink="/profile">
+          settings
+        </i>
+        <i class="material-icons" (click)="logout()">
+          input
+        </i>
+      </div>
+
+    </header>
+
+  </div>
+  <div class="content">
+    <div id="sidebar" class="side-bar open">
+      <div *ngFor="let itemMenu of menu" class="menu-link">
+        <a routerLink="/admin/{{itemMenu.link}}" routerLinkActive="active"><i
+          class="material-icons" routerLinkActive="active">{{itemMenu.icon}}</i>{{itemMenu.title}}</a>
+      </div>
+    </div>
+    <div class="main-bar">
+      <div class="edit-container">
+        <router-outlet (activate)="onActivate($event)"></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>
+<app-notification #notification></app-notification>

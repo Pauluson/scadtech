@@ -1,0 +1,88 @@
+@import 'src/app/app.component'
+
+.grid-row
+  display: flex
+  flex-wrap: wrap
+  box-sizing: border-box
+.container
+  padding: 0 15px
+.col-lg-9
+  width: 75%
+  box-sizing: border-box
+  position: relative
+  min-height: 1px
+  padding-left: 15px
+  padding-right: 15px
+  flex-shrink: 0
+  flex-grow: 0
+  max-width: 100%
+
+ol
+  margin: 0
+  padding: 0
+img
+  margin: 10px 0
+  max-width: 100%
+  height: auto
+
+li
+  padding-left: 30px
+  list-style: none
+  font-size: 18px
+  color: #666
+  position: relative
+  display: list-item
+  text-align: -webkit-match-parent
+li+li
+  margin-top: 23px
+ol>li:before, .wysiwyg ul ol>li:before, ol>li:before, ul ol>li:before
+  position: absolute
+  left: 0
+  top: 0
+  counter-increment: olCounter
+  content: counter(olCounter)
+  color: $main-color
+  font-weight: 700
+  margin: 0 2px 0 0
+
+
+.link
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  min-width: 215px
+  height: 38px
+  box-sizing: border-box
+  border: 1px solid $main-color
+  color: $main-color
+  font: 14px/1.42 'Roboto',sans-serif
+  transition: .3s color,.3s background-color
+  margin-top: 3px
+
+a
+  background-color: transparent
+  -text-decoration-skip: objects
+  color: $main-color
+  text-decoration: underline
+
+.link span
+  width: 27px
+  height: 1px
+  margin-left: 10px
+  margin-right: -14px
+  display: inline-block
+  background-color: $main-color
+  position: relative
+  transition: .3s background-color,.3s width,.3s margin
+
+.link span:before
+  content: ''
+  position: absolute
+  transition: border-color .3s ease
+  right: 0
+  top: -1px
+  border-style: solid
+  border-width: 1.5px 0 1.5px 2px
+  border-color: transparent transparent transparent $main-color
+
+

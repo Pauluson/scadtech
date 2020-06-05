@@ -1,0 +1,17 @@
+<div>
+  <app-headline [title]="'Сообщение'"></app-headline>
+
+  <div>
+    <h3>От:</h3>
+    <input value="{{feedback.surname}} {{feedback.name}} {{feedback.middleName}}" readonly/>
+    <h3>Текст</h3>
+    <textarea value="{{feedback.text}}" readonly></textarea>
+
+    <br>
+    <h3>Информация для связи</h3>
+    <br>
+    <p>Электронная почта: {{feedback.email}}</p>
+    <p>Телефон: {{feedback.phone}}</p>
+  </div>
+</div>
+

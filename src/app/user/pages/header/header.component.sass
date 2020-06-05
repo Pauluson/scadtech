@@ -1,0 +1,170 @@
+@import 'src/app/app.component'
+*
+  margin: 0
+  padding: 0
+
+.header.fixed
+  position: fixed
+  width: 100%
+  margin: 0
+  padding: 0
+  transform: translateY(-100%)
+  transition: transform .3s ease
+  .logo-wrapper
+    margin: 0
+  .header-logo
+    transform: scale(.5)
+  .header-contacts
+    flex-direction: row
+    .header-phone
+      margin-right: 1rem
+  .header-menu
+    li
+      margin-right: 10px
+
+.header.fixed.active
+  transform: translateY(0)
+  z-index: 100
+
+.header
+  display: block
+  position: relative
+  padding: 27px 0 10px
+  background-color: #fff
+  margin-bottom: 30px
+  .logo-wrapper
+    width: 150px
+    cursor: pointer
+    img
+      width: 100%
+      height: 100%
+  .menu-title
+    margin-bottom: 13px
+    color: #333
+    letter-spacing: .16px
+  .header-menu
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    list-style: none
+    padding: 0
+
+.content-wrapper
+  display: flex
+  justify-content: space-between
+  align-items: center
+  margin: 0 auto
+  width: 100%
+  max-width: 1140px
+  box-sizing: border-box
+
+.header-contacts
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: flex-end
+  text-align: right
+  height: 76px
+
+
+header.fixed
+  transition: transform .3s ease
+  display: block
+  position: fixed
+  width: 100vw
+  top: 0
+  left: 0
+  padding: 0
+  background-color: #fff
+  box-shadow: 0 0 1px 1px rgba(238,238,238,.3)
+  z-index: 1000
+  .menu-title
+    display: none
+  .content-wrapper
+    display: flex
+    align-items: stretch
+    justify-content: space-between
+    height: 63px
+  .logo-wrapper
+    height: 60px
+    margin: 0 20px
+    justify-content: center
+  .menu-wrapper
+    width: 550px
+    padding: 0
+    margin: 0
+  .header-contacts
+    flex-direction: row
+    margin-left: 0
+    height: auto
+    a
+      margin: 0 20px
+
+.header.fixed .header-contacts, .header.fixed .logo-wrapper, .header.fixed .menu-wrapper
+  display: flex
+  align-items: center
+
+ul
+  margin: 0
+  padding: 0
+
+.list
+  min-width: 160px
+  display: none
+  position: absolute
+  padding: 15px 5px
+  background-color: #fff
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2)
+  z-index: 1
+
+.header-menu li:hover
+  a
+    color: $main-color
+    border-color: transparent
+
+.list li
+  display: block
+  width: 196px
+  padding: 0
+  color: black
+  a
+    display: block
+    padding: 6px 5px
+    border: none
+    color: black !important
+    transition: background-color .3s linear
+    &:hover
+      background-color: $main-color
+      color: white
+
+
+.list li:hover
+  background-color: #fff
+
+.header-menu li:hover .list
+  display: block
+
+
+.header-menu a
+  display: inline-block
+  text-decoration: none
+  padding: 10px 0 5px
+  color: #333
+  font-size: 14px
+  font-weight: 400
+  border-bottom: 1px solid $main-color
+  transition: .3s color,.3s border-color
+
+.header-menu > li
+  display: inline-block
+  margin-right: 20px
+  position: relative
+.active
+  color: $main-color !important
+a .header-phone, a .header-mail
+  text-decoration: none
+.header-mail
+  color: $main-color
+  border-bottom: 1px solid $main-color
+.header-phone
+  color: #333

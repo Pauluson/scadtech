@@ -1,0 +1,38 @@
+<div  >
+    <app-headline *ngIf="state === true" [title]="'Добавление услуги'"></app-headline>
+    <app-headline *ngIf="state === false" [title]="'Редактирование услуги'"></app-headline>
+  
+    <form [formGroup]="serviceForm">
+  
+      <div class="form-group">
+        <h2>Название</h2>
+        <input type="text" formControlName="name">
+        <div *ngIf="serviceForm.get('name').invalid" [ngStyle]="{'color': 'red'}"> Название обязательно </div>
+      </div>
+      <div class="form-group">
+        <h2>Контент</h2>
+        <editor type="text" formControlName="content"
+                [init]="{
+          height: 500,
+          plugins: [
+            'advlist autolink lists link image imagetools code charmap print preview anchor',
+            'searchreplace visualblocks code fullscreen',
+            'insertdatetime media table paste code help wordcount'
+          ],
+          menubar: 'file edit insert view format table help',
+          image_uploadtab: true,
+          imagetools_toolbar: 'rotateleft rotateright | flipv fliph | editimage imageoptions',
+          toolbar:
+            ' formatselect | bold italic underline forecolor backcolor | \ alignleft aligncenter alignright alignjustify | \ bullist numlist outdent indent | removeformat ',
+          paste_data_images: true
+        }"
+        >
+        </editor>
+        <div *ngIf="serviceForm.get('content').invalid" [ngStyle]="{'color': 'red'}"> Контент обязателен </div>
+      </div>
+    </form>
+  
+    <button *ngIf="state === true" (click)="addService()">Добавить</button>
+    <button *ngIf="state === false" (click)="updateService()">Сохранить</button>
+  </div>
+  

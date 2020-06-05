@@ -1,0 +1,39 @@
+<div class="col" *ngIf="key === 'news'">
+  <div *ngIf="item.previewImage?.length !== 0" class="cover" [ngStyle]="{'background-image': 'url(' + item.previewImage + ')'}">
+    <i class="icon material-icons">edit</i>
+  </div>
+  <div *ngIf="item.previewImage?.length === 0" class="cover" [ngStyle]="{'background-color': '$main-color'}">
+    <i class="icon material-icons">edit</i>
+  </div>
+  <p class="date">{{item.date}}</p>
+  <p class="title">{{item.title?.slice(0, 43)}}...</p>
+</div>
+<div class="col" *ngIf="key === 'leaderships'">
+  <div *ngIf="item.image.length !== 0" class="cover" [ngStyle]="{'background-image': 'url(' + item.image + ')'}">
+    <i class="icon material-icons">edit</i>
+  </div>
+  <div *ngIf="item.image.length === 0" class="cover" [ngStyle]="{'background-color': '$main-color'}">
+    <i class="icon material-icons">edit</i>
+  </div>
+  <p class="title">{{item.name}}</p>
+</div>
+
+<div class="col" *ngIf="key === 'contacts'">
+  <div *ngIf="item.image.length !== 0" class="cover" [ngStyle]="{'background-image': 'url(' + item.image + ')'}">
+    <i class="icon material-icons">edit</i>
+  </div>
+  <div *ngIf="item.image.length === 0" class="cover" [ngStyle]="{'background-color': '$main-color'}">
+    <i class="icon material-icons">edit</i>
+  </div>
+  <p class="title">{{item.name}}</p>
+</div>
+
+<div class="col" *ngIf="key === 'partners'">
+  <div *ngIf="item.image.length !== 0" class="image" [ngStyle]="{'background-image': 'url(' + item.image + ')', 'background-repeat': 'no-repeat'}">
+    <i class="icon material-icons">edit</i>
+  </div>
+  <div *ngIf="item.image.length === 0" class="image" [ngStyle]="{'background-color': '$main-color'}">
+    <i class="icon material-icons">edit</i>
+  </div>
+  <p class="title">{{item.name}}</p>
+</div>

@@ -1,0 +1,30 @@
+<div class="about-block history">
+  <div class="content-wrapper">
+      <app-headline [title]="'История'"></app-headline>
+  </div>
+
+  <div class="history-frame">
+    <div
+      cdkDragLockAxis="x"
+      cdkDrag
+      #item
+      class="item slide"
+      (cdkDragEnded)="drag($event)"
+      [style.top.px]="initialPosition.y"
+      [style.left.px]="initialPosition.x"
+      [cdkDragFreeDragPosition]="initialPosition">
+
+      <div class="first-line">
+        <div *ngFor="let historyEvent of historyEvents; let i = index" class="history-item-wrapper">
+          <app-history-item [historyEvent]="historyEvent" *ngIf="i === 0 || i%2 === 1"></app-history-item>
+        </div>
+      </div>
+      <hr class="line" />
+      <div class="second-line">
+        <div *ngFor="let historyEvent of historyEvents; let i = index" class="history-item-wrapper">
+          <app-history-item [historyEvent]="historyEvent" *ngIf="i !== 0 && i%2 === 0 "></app-history-item>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

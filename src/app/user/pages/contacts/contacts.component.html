@@ -1,0 +1,17 @@
+<app-block>
+  <app-headline [title]="headline"></app-headline>
+  <div class="contacts-list">
+    <div
+      *ngFor="let contact of contacts; let index = index"
+      [class.big-card]="index === 0"
+      [class.selected]="(selectedContact === index) "
+      (click)="openInformation(index)"
+    >
+      <app-contact id="contact" [contact]="contact" [selected]="(selectedContact === index)"></app-contact>
+    </div>
+  </div>
+</app-block>
+
+
+
+

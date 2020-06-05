@@ -1,0 +1,16 @@
+<app-block>
+    <app-headline [title]="event?.title"></app-headline>
+    <div class="wysiwyg js-content">
+      <div class="block-content">
+        <time>{{event?.date}}</time>
+        <div class="html" [innerHTML]="event?.content | safeHtml"></div>
+      </div>
+
+
+      <div class="news-pagination">
+        <div class="prev" (click)="newEvent()"><a routerLink='/about/news/{{event?.prevId}}'><span>{{event?.prevTitle}}</span></a></div>
+        <div class="next" (click)="newEvent()"><a routerLink='/about/news/{{event?.nextId}}'><span>{{event?.nextTitle}}</span></a></div>
+      </div>
+
+    </div>
+</app-block>

@@ -1,0 +1,18 @@
+<div  >
+  <div class="inline">
+    <app-headline [title]="headline"></app-headline>
+    <button routerLink='/admin/edit-news/add'><i class="material-icons">add</i>новость</button>
+  </div>
+  <div class="contacts-list">
+    <div *ngFor="let item of events" class="event">
+      <app-item routerLink='/admin/edit-news/{{item._id}}'
+                [item]="item"
+                [key]="'news'"></app-item>
+      <i (click)="deleteItem(item)" class="close material-icons">close</i>
+    </div>
+  </div>
+  <ngb-pagination (pageChange)="changePage($event)" [collectionSize]="countEvents" [pageSize]="pageSize" [(page)]="page"
+                  [boundaryLinks]="false"></ngb-pagination>
+</div>
+
+

@@ -1,0 +1,32 @@
+<div class="inline">
+  <app-headline [title]="headline"></app-headline>
+  <button routerLink='/admin/edit-partners/add'><i class="material-icons">add</i>партнера</button>
+</div>
+<div  >
+  <div class="table">
+    <table>
+      <thead>
+        <tr>
+          <th>Фотография</th>
+          <th>Название</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of partners">
+          <td><img src="{{item.image}}" class="image"/></td>
+          <td><p>{{item.name}}</p></td>
+          <td routerLink='/admin/edit-partners/{{item._id}}'><i class="material-icons">edit</i></td>
+          <td><i class="material-icons" (click)="deletePartner(item)">close</i></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="navigation">
+    <ngb-pagination (pageChange)="changePage($event)" [collectionSize]="countPartners" [pageSize]="pageSize" [(page)]="page"
+                    [boundaryLinks]="false"></ngb-pagination>
+  </div>
+</div>
+

@@ -1,0 +1,39 @@
+<div  >
+  <app-headline *ngIf="state === true" [title]="'Добавление руководителя'"></app-headline>
+  <app-headline *ngIf="state === false" [title]="'Редактирование руководителя'"></app-headline>
+
+  <form [formGroup]="leader">
+    <div class="form-group">
+      <div class="image-block">
+        <h2>Фотография</h2>
+        <div class="image-control-wrapper">
+          <label for="uploadImage">Загрузить изображение</label>
+          <div class="image-preview-block" *ngIf="!imagePreview && f.image.value">
+            <img class="image-preview" src="{{ f.image.value }}" alt="image">
+          </div>
+          <ng-template [ngIf]="imagePreview">
+
+            <div class="image-preview-block">
+              <img class="image-preview" src="{{ imagePreview }}" alt="image" />
+            </div>
+          </ng-template>
+          <input id="uploadImage" name="uploadImage" class="uploadImage" type="file" accept=".png, .jpg, .jpeg" (change)="changeValue($event)">
+        </div>
+        <div *ngIf="!imageURL && !f.image.value" [ngStyle]="{'color': 'red'}"> Фотография обязательна </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <h2>Имя</h2>
+      <input type="text" formControlName="name">
+      <div *ngIf="leader.get('name').invalid" [ngStyle]="{'color': 'red'}"> Имя обязательно </div>
+    </div>
+    <div class="form-group">
+      <h2>Должности</h2>
+      <input type="text" formControlName="position">
+      <div *ngIf="leader.get('position').invalid" [ngStyle]="{'color': 'red'}"> Должность обязательна </div>
+    </div>
+  </form>
+
+  <button *ngIf="state === true" (click)="addLeader()">Добавить</button>
+  <button *ngIf="state === false" (click)="updateLeader()">Сохранить</button>
+</div>
