@@ -75,6 +75,7 @@ export class EditProductionComponent implements OnInit {
     this.productionService.updateAbout(this.production.value).subscribe(
       () => {
         this.notify.emit({ type: 'success', message: 'Сохранено!' });
+        this.ngOnInit();
       },
       () => this.notify.emit({ type: 'error', message: 'Ошибка сохранения!' })
     );
