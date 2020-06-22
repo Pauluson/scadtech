@@ -31,4 +31,5 @@ export class EditPagesComponent implements OnInit {
     this.authenticationService.logout();
     this.router.navigate(['/auth']);
   }
+  
 }

@@ -1,3 +1,4 @@
+
 <div class="page">
   <div id="header" class="header">
     <header>
@@ -7,12 +8,22 @@
         />
       <p>Admin page</p>
       <div class="icons">
+        <div class="dropdown">
+          <button class="drop" type="button" data-toggle="dropdown">
+           <i class="material-icons">menu</i> 
+          </button>
+          <ul class="dropdown-menu">
+            <li *ngFor="let itemMenu of menu" class="menu-link"><a routerLink="/admin/{{itemMenu.link}}" routerLinkActive="active"><i
+              class="material-icons" routerLinkActive="active"></i>{{itemMenu.title}}</a></li>
+          </ul>
+        </div>
         <i class="material-icons" routerLink="/profile">
           settings
         </i>
         <i class="material-icons" (click)="logout()">
           input
         </i>
+        
       </div>
 
     </header>

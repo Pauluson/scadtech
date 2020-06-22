@@ -22,6 +22,7 @@
     width: 100%
     padding: 0 3rem
 
+  
   .header
     background: white
     min-height: 70px
@@ -31,6 +32,7 @@
     box-shadow: 0 0.5rem 1rem 0 rgba(44,51,73,.1)
 
   .content
+    margin-left: 5px
     flex: 1 1 auto
     overflow-y: auto
     min-height: 0px
@@ -41,7 +43,6 @@
     width: 300px
     overflow-y: auto
     min-height: 0px
-
 
   .main-bar
     width: calc( 100% - 300px )
@@ -91,3 +92,22 @@
   display: flex
   i
     margin: 0 10px
+
+.drop
+  style: none
+  border-color: white
+  background-color: none
+  box-shadow: none
+  width:5px
+  margin-bottom:10px
+.dropdown-menu
+  color: black
+  text-direction: none 
+
+
+@media only screen and (max-width: 500px)
+  .side-bar 
+    margin-left: -300px
+    width: 200px
+
+

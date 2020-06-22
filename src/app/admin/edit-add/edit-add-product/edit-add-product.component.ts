@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { IEvent } from '../../../shared/models/news-page.model';
 import { IProduct } from '../../../shared/models/products.model';
 import { ProductsService } from '../../../shared/services/products.service';
-declare let tinymce: any;
+
 @Component({
   styleUrls: ['./edit-add-product.component.sass'],
   templateUrl: './edit-add-product.component.html'
@@ -80,10 +80,13 @@ export class EditAddProductComponent implements OnInit {
       .subscribe(
         () => {
           this.notify.emit({ type: 'success', message: 'Запись обновлена!' });
-          this.router.navigate(['/edit-production']);
+          //this.router.navigate(['/edit-production']);
         },
         () => this.notify.emit({ type: 'error', message: 'Ошибка обновления!' })
       );
   }
- 
+  changeValue(event:Event)
+  {
+    console.log(event);
+  }
 }

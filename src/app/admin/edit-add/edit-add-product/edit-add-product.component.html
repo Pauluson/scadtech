@@ -12,7 +12,6 @@
     <div class="form-group">
       <h2>Контент</h2>
       <editor type="text" formControlName="content" (change)="changeValue($event)"
-              apiKey="x1949lhi03jh1budly1rowufw2x7bv3uva3b0zomks4y5a8u"
               [init]="{
         height: 500,
         plugins: [
@@ -23,10 +22,8 @@
         menubar: 'file edit insert view format table help',
         image_uploadtab: true,
         imagetools_toolbar: 'rotateleft rotateright | flipv fliph | editimage imageoptions',
-        file_picker_types: 'image',
-        toolbar: 'formatselect |link image| bold italic underline forecolor backcolor | \ alignleft aligncenter alignright alignjustify | \ bullist numlist outdent indent | removeformat ',
-        paste_data_images: true
-        
+        toolbar: 'formatselect | bold italic underline forecolor backcolor | \ alignleft aligncenter alignright alignjustify | \ bullist numlist outdent indent | removeformat ',
+        paste_data_images: true   
       }"
       >
       </editor>
